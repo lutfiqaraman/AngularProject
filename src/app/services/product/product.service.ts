@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from "../../models/product/product";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,10 @@ import { Product } from "../../models/product/product";
 
 export class ProductService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  }
 
   getProduct() {
-
     let product: Product = {
       id: 0,
       title: "iPhone 2022",
