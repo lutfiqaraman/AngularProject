@@ -15,7 +15,7 @@ export class ProductService {
     let product: Product = {
       id: 0,
       title: "iPhone 2022",
-      price: 250,
+      price: 225,
       description: "iPhone 2022 is the best product of 2022 with a good price"
     }
 
