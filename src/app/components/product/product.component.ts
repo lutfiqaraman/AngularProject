@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Product } from "../../models/product/product";
 
 import { ProductService } from "../../services/product/product.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'di-product-page',
@@ -11,8 +12,17 @@ import { ProductService } from "../../services/product/product.service";
 
 export class ProductComponent {
   product: Product;
+  productID: string | null | undefined;
+  productIDFromRoute: number;
 
-  constructor(productSvc: ProductService) {
+  constructor(productSvc: ProductService, route: ActivatedRoute) {
     this.product = productSvc.getProduct();
+    this.productIDFromRoute = Number(route.paramMap.subscribe(
+      params => this.productID = params.get('id')
+    ));
+  }
+
+  ngOnInit() {
+    this.productID = this.productIDFromRoute.toString();
   }
 }
