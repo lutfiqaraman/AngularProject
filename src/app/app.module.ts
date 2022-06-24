@@ -10,8 +10,10 @@ import { Product2Component } from "./components/product2/product2.component";
 import { ShippingModule } from "./shipping/shipping.module";
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
 import {FormsModule} from "@angular/forms";
-
-
+import {AppRoutingModule} from "./app-routing.module";
+import { HomeComponent } from './components/home/home.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -19,15 +21,21 @@ import {FormsModule} from "@angular/forms";
     ProductComponent,
     Product1Component,
     Product2Component,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    HomeComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ShippingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
