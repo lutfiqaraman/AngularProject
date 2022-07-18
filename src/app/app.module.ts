@@ -14,7 +14,6 @@ import {AppRoutingModule} from "./app-routing.module";
 import { HomeComponent } from './components/home/home.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
-import { OrderComponent } from './order/order.component';
 import { OrderprocessorComponent } from './components/orderprocessor/orderprocessor.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { OrderprocessorComponent } from './components/orderprocessor/orderproces
     TwoWayBindingComponent,
     HomeComponent,
     PagenotfoundComponent,
-    OrderComponent,
     OrderprocessorComponent
   ],
   imports: [
